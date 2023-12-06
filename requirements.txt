@@ -1,9 +1,10 @@
 
-selenium
-webdriver_manager
-python
-django
+selenium==4.15.2
+webdriver_manager==4.0.1
+python==3.12.0
+django==4.2.6
 pymysql
-numpy
-pandas
-requests
+numpy==1.26.1
+pandas== 2.1.1
+requests== 2.31.0
+beautifulsoup
