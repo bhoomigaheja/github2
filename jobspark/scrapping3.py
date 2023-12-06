@@ -79,6 +79,4 @@ def gpt(query):
     
     return scraped_data
 
-# Example usage
-gpt_result = gpt('your_query_here')
-print(gpt_result)
+
