@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
+from jobspark.settings import CHROME_DRIVER_PATH
 
 # Initialize an empty list to store job data dictionaries
 job_data_list2 = []
@@ -12,7 +13,7 @@ job_data_list2 = []
 def scrape_data2(query2):
     chrome_options = Options()
     chrome_options.add_argument('--headless')  # Run Chrome in headless mode
-    driver = webdriver.Chrome(options=chrome_options)  # Pass options to Chrome
+    driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH, options=chrome_options)  # Pass options to Chrome
 
     driver.get("https://www.naukri.com/") 
 

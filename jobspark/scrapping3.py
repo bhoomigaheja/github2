@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+from jobspark.settings import CHROME_DRIVER_PATH
 
 import pathlib
 from time import sleep
@@ -17,7 +18,7 @@ def open_website():
     chrome_options.add_argument(f"user-data-dir={ScriptDir}\\chromedata")
 
     service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH, options=chrome_options)
     driver.maximize_window()
     driver.get(url=url)
     return driver
