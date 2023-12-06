@@ -1,3 +1,6 @@
-2023/12/06-17:29:11.618 2a60 Reusing MANIFEST C:\Users\pc\Downloads\scrapping\jobspark\github2\chromedata\Default\shared_proto_db/MANIFEST-000001
-2023/12/06-17:29:11.663 2a60 Recovering log #3
-2023/12/06-17:29:11.669 2a60 Reusing old log C:\Users\pc\Downloads\scrapping\jobspark\github2\chromedata\Default\shared_proto_db/000003.log 
+2023/12/06-23:37:34.228 1efc Reusing MANIFEST C:\Users\pc\Downloads\scrapping\jobspark\github2\chromedata\Default\shared_proto_db/MANIFEST-000001
+2023/12/06-23:37:34.229 1efc Recovering log #3
+2023/12/06-23:37:34.239 1efc Reusing old log C:\Users\pc\Downloads\scrapping\jobspark\github2\chromedata\Default\shared_proto_db/000003.log 
+2023/12/06-23:38:28.160 1370 Level-0 table #5: started
+2023/12/06-23:38:28.174 1370 Level-0 table #5: 94384 bytes OK
+2023/12/06-23:38:28.182 1370 Delete type=0 #3

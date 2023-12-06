@@ -31,7 +31,7 @@ from . views import gpt_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index', views.index, name = 'index'),
+    path('', views.index, name = 'index'),
     path('blog/', views.blog, name = 'blog'),
     path('sign-in/', views.sign, name = 'sign'),
     path('sing-up/', views.signn, name = 'signn'),
@@ -53,7 +53,7 @@ urlpatterns = [
     path('application_view/', views.application_view, name='application_view'),
     path('submit_resume/', views.submit_resume, name='submit_resume'),
     path('signup2/', views.signup2, name='signup2'),
-    path('', views.signup, name='signup'),
+    path('signup', views.signup, name='signup'),
     path('sign/', views.sign, name='sign'),
     path('login/', views.login_user, name='login_user'),
     

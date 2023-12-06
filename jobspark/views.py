@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from jobspark.scrapping1 import scrape_jobs
 from jobspark.scrapping3 import gpt
-from jobspark.scrapping2 import scrape_data2
+from jobspark.scrapping2 import main
   # import your function from the Python file
 # views.py in yourapp
 from django.shortcuts import render, redirect
@@ -121,7 +121,7 @@ def login_view(request):
 def naukri_view2(request):
     if request.method == 'POST':
         query2 = request.POST.get('query2', '')
-        job_data_list2 = scrape_data2(query2)
+        job_data_list2 = main(query2)
         job_data_list2 = job_data_list2[:18]
 
         if job_data_list2:

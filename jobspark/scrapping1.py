@@ -5,28 +5,30 @@ from selenium.webdriver.chrome.options import Options
 from jobspark.settings import CHROME_DRIVER_PATH
 from webdriver_manager.chrome import ChromeDriverManager
 import os
-from selenium.webdriver.chrome.options import Options
-from bs4 import BeautifulSoup
-from jobspark.settings import CHROME_DRIVER_PATH
-from webdriver_manager.chrome import ChromeDriverManager
-def scrape_jobs(query):
-    options = webdriver.ChromeOptions()
-    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-    options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--no-sandbox')    
-    options.add_argument('--headless')
-    driver_path = ChromeDriverManager().install()
+import pathlib
+from time import sleep
+from selenium.webdriver.chrome.service import Service
 
-    # Set Chrome options
+def open_website(url):
+    ScriptDir = pathlib.Path().absolute()
+
     chrome_options = Options()
-    chrome_options.add_argument('--headless')  # Run Chrome in headless mode
+    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+    chrome_options.add_argument(f"user-agent={user_agent}")
+    chrome_options.add_argument(f"user-data-dir={ScriptDir}\\chromedata")
+    chrome_options.add_argument('--headless')
 
-    # Initialize Chrome driver with options
-    driver = webdriver.Chrome(executable_path=os.environ.get("CHROME_DRIVER_PATH"), options=chrome_options)  # Pass options to Chrome
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=chrome_options)
+    driver.maximize_window()
+    driver.get(url)
+    return driver
 
+def scrape_jobs(query):
+    url = "https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=&txtLocation=India"
 
-    # Open the TimesJobs website
-    driver.get("https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=&txtLocation=India")
+    # Open the website
+    driver = open_website(url)
 
     try:
         # Close any popup that might appear
@@ -57,7 +59,7 @@ def scrape_jobs(query):
     # Extract job details
     for i in result2:
         data_dict = {}  # Dictionary to store data for each job
-        
+
         # TITLE
         title = i.find('a')
         data_dict['title'] = title.text
@@ -103,3 +105,5 @@ def scrape_jobs(query):
     driver.quit()
 
     return data_dict_list if data_dict_list else None
+
+# Example usage
