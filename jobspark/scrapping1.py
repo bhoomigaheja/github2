@@ -14,7 +14,10 @@ from selenium.webdriver.chrome.options import Options
 def scrape_jobs(query):
     chrome_options = Options()
     chrome_options.add_argument('--headless')  # Run Chrome in headless mode
+    driver = webdriver.Chrome(options=chrome_options) 
+    chrome_options.add_argument('--headless')  # Run Chrome in headless mode
     driver = webdriver.Chrome(options=chrome_options)  # Pass options to Chrome
+  # Pass options to Chrome
 
    
     driver.get("https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=&txtLocation=India") 
