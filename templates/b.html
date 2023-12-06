@@ -1,0 +1,10 @@
+{% for data in scraped_data %}
+  <h3>{{ data.title }}</h3>
+  <p>{{ data.company }}</p>
+  <p>{{ data.exp }}</p>
+  <p>{{ data.salary }}</p>
+  <p>{{ data.loc }}</p>
+  <p>{{ data.desc }}</p>
+  <p>{{ data.skills }}</p>
+  <p>{{ data.day }}</p>
+{% endfor %}

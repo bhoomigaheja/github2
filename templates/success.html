@@ -1,0 +1,9 @@
+<!-- success.html -->
+
+<div class="application-list">
+    {% for application in applications %}
+        <div class="application">
+            <p>{{ application.role }} | {{ application.content }}</p>
+        </div>
+    {% endfor %}
+</div>
