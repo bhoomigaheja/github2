@@ -1,6 +1,6 @@
 selenium
 webdriver_manager
-python==3.11
+python
 django
 pymysql
 numpy
