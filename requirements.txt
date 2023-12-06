@@ -1,0 +1,8 @@
+selenium
+webdriver_manager
+python==3.11
+django
+pymysql
+numpy
+pandas
+requests
