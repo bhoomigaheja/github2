@@ -5,13 +5,19 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from jobspark.settings import CHROME_DRIVER_PATH
-
+from webdriver_manager.chrome import ChromeDriverManager
 import pathlib
 from time import sleep
 
 def open_website():
+    
     ScriptDir = pathlib.Path().absolute()
     url = "https://flowgpt.com/chat"
+    driver_path = ChromeDriverManager().install()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')  # Add any other options you need
+
+    service = webdriver.Chrome(service_args=["--verbose"], executable_path=driver_path, options=options)
     chrome_options = Options()
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
     chrome_options.add_argument(f"user-agent={user_agent}")
