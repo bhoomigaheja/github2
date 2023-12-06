@@ -4,9 +4,17 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from jobspark.settings import CHROME_DRIVER_PATH
 from webdriver_manager.chrome import ChromeDriverManager
-
+import os
+from selenium.webdriver.chrome.options import Options
+from bs4 import BeautifulSoup
+from jobspark.settings import CHROME_DRIVER_PATH
+from webdriver_manager.chrome import ChromeDriverManager
 def scrape_jobs(query):
-    # Install and manage ChromeDriver
+    options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--no-sandbox')    
+    options.add_argument('--headless')
     driver_path = ChromeDriverManager().install()
 
     # Set Chrome options
@@ -14,7 +22,8 @@ def scrape_jobs(query):
     chrome_options.add_argument('--headless')  # Run Chrome in headless mode
 
     # Initialize Chrome driver with options
-    driver = webdriver.Chrome(executable_path=driver_path, options=chrome_options)
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROME_DRIVER_PATH"), options=chrome_options)  # Pass options to Chrome
+
 
     # Open the TimesJobs website
     driver.get("https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=&txtLocation=India")

@@ -9,7 +9,11 @@ import os
 
 def open_website():
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')  # Add any other options you need
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--no-sandbox')    
+    options.add_argument('--headless')
+  # Add any other options you need
 
     ScriptDir = os.path.abspath(os.path.dirname(__file__))
     user_data_dir = os.path.join(ScriptDir, 'chromedata')
@@ -24,7 +28,9 @@ def open_website():
     service = Service(ChromeDriverManager().install())
 
     # Initialize Chrome driver with options
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROME_DRIVER_PATH"), options=chrome_options)  # Pass options to Chrome
+
     driver.maximize_window()
 
     return driver
