@@ -12,9 +12,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 def scrape_jobs(query):
-    driver = webdriver.Chrome()
     chrome_options = Options()
-    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--headless')  # Run Chrome in headless mode
+    driver = webdriver.Chrome(options=chrome_options)  # Pass options to Chrome
+
+   
     driver.get("https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=&txtLocation=India") 
     try:
         driver.find_element(By.XPATH, '//*[@id="closeSpanId"]').click()

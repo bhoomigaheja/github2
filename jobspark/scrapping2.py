@@ -10,9 +10,10 @@ from selenium.webdriver.chrome.options import Options
 job_data_list2 = []
 
 def scrape_data2(query2):
-    driver = webdriver.Chrome()
     chrome_options = Options()
-    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--headless')  # Run Chrome in headless mode
+    driver = webdriver.Chrome(options=chrome_options)  # Pass options to Chrome
+
     driver.get("https://www.naukri.com/") 
 
     input_search = driver.find_element(By.XPATH,'//*[@id="root"]/div[7]/div/div/div[1]/div/div/div[1]/div[1]/div/input')
