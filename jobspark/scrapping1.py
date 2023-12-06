@@ -11,12 +11,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from jobspark.settings import CHROME_DRIVER_PATH
+from webdriver_manager.chrome import ChromeDriverManager
 
 def scrape_jobs(query):
+    driver_path = ChromeDriverManager().install()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')  # Add any other options you need
+
+    service = webdriver.Chrome(service_args=["--verbose"], executable_path=driver_path, options=options)
     chrome_options = Options()
     chrome_options.add_argument('--headless')  # Run Chrome in headless mode
     driver = webdriver.Chrome(options=chrome_options) 
-    chrome_options.add_argument('--headless')  # Run Chrome in headless mode
+    
     driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH, options=chrome_options)  # Pass options to Chrome
   # Pass options to Chrome
 
