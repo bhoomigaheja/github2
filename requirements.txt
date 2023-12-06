@@ -1,4 +1,4 @@
---upgrade pip
+
 selenium
 webdriver_manager
 python==3.9
