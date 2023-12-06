@@ -7,4 +7,4 @@ pymysql
 numpy==1.26.1
 pandas== 2.1.1
 requests== 2.31.0
-beautifulsoup
+beautifulsoup4
