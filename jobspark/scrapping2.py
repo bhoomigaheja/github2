@@ -70,4 +70,3 @@ def main(query):
     job_data = scrape_data(driver)
     driver.quit()
     return job_data
-
