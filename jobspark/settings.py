@@ -23,12 +23,12 @@ import os
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u5y11v=6a+i#c_je_qpmueqwih=9%2scnkp#_5!0*i%0*j7)&t'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG","FALSE").lower()== "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -133,3 +133,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CHROME_DRIVER_PATH = 'chrome.exe'
 os.environ["GOOGLE_CHROME_BIN"] = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+import dj_database_url
+database_url= os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse("database_url")
