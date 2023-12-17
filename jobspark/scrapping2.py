@@ -77,7 +77,7 @@ def search_jobs(driver, query2):
     # You can further process or save this data as needed
     
     # Close the browser
-    driver.quit()
+    
     return job_data_list2
 
 
@@ -88,3 +88,4 @@ def main(query2):
     driver = initialize_driver(url)
     search_jobs(driver, query2)
     return job_data_list2
+    driver.quit()

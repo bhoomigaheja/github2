@@ -31,10 +31,10 @@ from . views import gpt_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name = 'index'),
+    path('index', views.index, name = 'index'),
     path('blog/', views.blog, name = 'blog'),
     path('sign-in/', views.sign, name = 'sign'),
-    path('sing-up/', views.signn, name = 'signn'),
+    path('', views.signn, name = 'signn'),
     path('pricing/', views.pricing, name = 'pricing'),
       
     path('forgot/', views.forgot, name = 'forgot'),
@@ -49,6 +49,7 @@ urlpatterns = [
     path('show_resumes/', views.show_resumes, name='show_resumes'),
     path('submit_resume/', views.submit_resume, name='submit_resume'),
     path('search_jobs/', views.search_jobs, name='search_jobs'),
+    
 
     path('application_view/', views.application_view, name='application_view'),
     path('submit_resume/', views.submit_resume, name='submit_resume'),

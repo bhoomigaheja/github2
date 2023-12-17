@@ -77,13 +77,13 @@ def scrape_jobs(query):
         data_dict['company'] = Company
 
         # Exp
-        Mat_icons = i.find_all('i', class_='material-icons')
-        Exp = Mat_icons[0].next_sibling.text.strip()
+        Mat_icons = i.find('i', class_='material-icons')
+        Exp = Mat_icons.next_sibling.text.strip()
         data_dict['experience'] = Exp
 
         # City
-        spans = i.find_all('span')
-        City = spans[1].text
+        spans = i.find('span')
+        City = spans.text
         data_dict['city'] = City
 
         # Date Posted
@@ -102,8 +102,8 @@ def scrape_jobs(query):
         print(job_data)
 
     # Close the browser
-    driver.quit()
-
+    \
     return data_dict_list if data_dict_list else None
+    driver.quit()
 
 # Example usage

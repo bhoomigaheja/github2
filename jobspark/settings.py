@@ -79,18 +79,12 @@ WSGI_APPLICATION = 'jobspark.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'project',
-        'USER':'root',
-        'PASSWORD': '',
-        'HOST':'localhost',
-        'PORT': '3306',
-        'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",'charset':'utf8mb4',
-        }
-
-        
-
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bhoomi',   # Change this to your PostgreSQL database name
+        'USER': 'postgres',        # Change this to the PostgreSQL username you created
+        'PASSWORD': '1234',    # Change this to the PostgreSQL password you set
+        'HOST': 'localhost',
+        'PORT': '5432',                 # Change this to your PostgreSQL port
     }
 }
 
@@ -137,5 +131,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # settings.py
 
-CHROME_DRIVER_PATH = 'chromedriver-win64\chromedriver.exe'
+CHROME_DRIVER_PATH = 'chrome.exe'
 os.environ["GOOGLE_CHROME_BIN"] = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"

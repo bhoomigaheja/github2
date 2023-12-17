@@ -163,7 +163,6 @@ def submit_resume(request):
 
     return render(request, 'resumeform.html', {'form': form})
 
-
 def view_resume(request):
     try:
         # Retrieve the latest resume from the database based on the 'id' field
@@ -194,13 +193,13 @@ def search_jobs(request):
         if request.method == 'POST':
             query = request.POST.get('query3', '')
             with connection.cursor() as cursor:
-                sql_query = "SELECT * FROM job WHERE title LIKE %s"
+                sql_query = "SELECT * FROM application WHERE job_title LIKE %s"
                 cursor.execute(sql_query, ['%' + query + '%'])
                 results = cursor.fetchall()
 
                 # Print the SQL query for debugging
                 print(f"SQL Query: {cursor.mogrify(sql_query, ['%' + query + '%'])}")
-                print(f"Query Results: {results}")
+                
 
             return render(request, 'application.html', {'results': results})
 

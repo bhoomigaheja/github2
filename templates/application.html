@@ -716,43 +716,48 @@
 </head>
 <body>
   
-{% for result in results %}
-<h1>{{result.1}}</h1>
-  <div class="application">
-    <h2>Subject: Application for [Job Title] Position</h2>
-
-    <p>Dear Hiring Manager,</p>
-
-    <p>
-     {{result.2}}
-    </p>
-
-    <h3>Key Highlights of my Qualifications:</h3>
-
-      <li>
-        
-        {{result.3}}
-      </li>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Search Results</title>
+  </head>
+  <body>
+  
+  {% for result in results %}
+    <h1></h1>
+    <div class="application">
+      <h2>Subject: Application for [Job Title] Position</h2>
+  
+      <p>Dear Hiring Manager,</p>
+  
+      <p>
+      {{ result.1 }}
+      </p>
+  
+     
+  
       
-    </ul>
-
-    <p>
-      I am impressed by [Company Name]'s commitment to [specific aspects of the company or projects].
-      I am eager to bring my skills and enthusiasm to your dynamic team. Attached is my resume for your consideration.
-    </p>
-
-    <p>
-      Thank you for considering my application. I look forward to the opportunity to discuss how my skills
-      and experiences align with the needs of your team.
-    </p>
-
-    <div class="signature">
-      <p>Best Regards,</p>
-      <p>[Your Full Name]</p>
-      <p>[Your Contact Information]</p>
-      <p>[LinkedIn Profile or Portfolio Link, if applicable]</p>
+      <p>
+        I am impressed by [Company Name]'s commitment to [specific aspects of the company or projects].
+        I am eager to bring my skills and enthusiasm to your dynamic team. Attached is my resume for your consideration.
+      </p>
+  
+      <p>
+        Thank you for considering my application. I look forward to the opportunity to discuss how my skills
+        and experiences align with the needs of your team.
+      </p>
+  
+      <div class="signature">
+        <p>Best Regards,</p>
+        <p>[Your Full Name]</p>
+        <p>[Your Contact Information]</p>
+        <p>[LinkedIn Profile or Portfolio Link, if applicable]</p>
+      </div>
     </div>
-  </div>
-{% endfor %}
-</body>
-</html>
+  {% endfor %}
+  
+  </body>
+  </html>
+  
