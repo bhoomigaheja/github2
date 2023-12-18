@@ -34,8 +34,7 @@ ALLOWED_HOSTS = os.environ.get("https://jobspark-23.onrender.com" ,"localhost").
 
 
 
-# Application definition
-
+# Application definit
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
