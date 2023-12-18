@@ -23,12 +23,16 @@ import os
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("12wertykli323456fhjkpoiue45678909876543")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG","FALSE").lower()== "true"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "https://jobspark-23.onrender.com,localhost").split(",")
+
+
+
+
 
 
 # Application definition
@@ -134,5 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CHROME_DRIVER_PATH = 'chrome.exe'
 os.environ["GOOGLE_CHROME_BIN"] = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 import dj_database_url
-database_url= os.environ.get("DATABASE_URL")
-DATABASES["default"] = dj_database_url.parse("database_url")
+DATABASE_URL = "postgres://bhoomi_user:1LWR2B0NWTLiuN6sgdwclNqb8EUx7uJR@dpg-clvflo6g1b2c73cg4gm0-a/bhoomi"
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
