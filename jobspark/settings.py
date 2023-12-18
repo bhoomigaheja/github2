@@ -85,7 +85,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bhoomi',   # Change this to your PostgreSQL database name
         'USER': 'postgres',        # Change this to the PostgreSQL username you created
-        'PASSWORD': '1234',    # Change this to the PostgreSQL password you set
+       'PASSWORD': '1LWR2B0NWTLiuN6sgdwclNqb8EUx7uJR',
+
         'HOST': 'dpg-clvflo6g1b2c73cg4gm0-a',
         'PORT': '5432',                 # Change this to your PostgreSQL port
     }
