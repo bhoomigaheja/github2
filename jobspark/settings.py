@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG","FALSE").lower()== "true"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "https://jobspark-23.onrender.com,localhost").split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "jobspark-23.onrender.com,localhost").split(",")
 
 
 
