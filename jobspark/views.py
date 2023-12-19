@@ -276,7 +276,7 @@ def login_user(request):
     return render(request, 'sign-in.html', {'form': form})
 
 # views.py
-from django.shortcuts import render
+
 from jobspark.scrapping3 import gpt
 
 from django.shortcuts import rend
