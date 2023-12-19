@@ -26,6 +26,7 @@ def open_website():
     
     # Check if the environment variable is set
         google_chrome_bin = os.environ["GOOGLE_CHROME_BIN"] = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+       
         if google_chrome_bin:
            chrome_options.binary_location = google_chrome_bin
         else:
@@ -109,4 +110,3 @@ def gpt(query):
 
     return scraped_data
 
-    
