@@ -14,33 +14,36 @@ from webdriver_manager.chrome import ChromeDriverManager
 import os
 import pathlib
 def open_website():
-    chrome_options = webdriver.ChromeOptions()
+    try:
+        chrome_options = webdriver.ChromeOptions()
     
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_argument('--no-sandbox')
-    ScriptDir = pathlib.Path().absolute()
-    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
-    chrome_options.add_argument(f"user-agent={user_agent}")
-    chrome_options.add_argument(f"user-data-dir={ScriptDir}\\chromedata")
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_argument('--no-sandbox')
+        ScriptDir = pathlib.Path().absolute()
+        user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+        chrome_options.add_argument(f"user-agent={user_agent}")
+        chrome_options.add_argument(f"user-data-dir={ScriptDir}\\chromedata")
     
     # Check if the environment variable is set
-    google_chrome_bin = os.environ["GOOGLE_CHROME_BIN"] = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-    if google_chrome_bin:
-        chrome_options.binary_location = google_chrome_bin
-    else:
-        print("GOOGLE_CHROME_BIN environment variable not set.")
+        google_chrome_bin = os.environ["GOOGLE_CHROME_BIN"] = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+        if google_chrome_bin:
+           chrome_options.binary_location = google_chrome_bin
+        else:
+            print("GOOGLE_CHROME_BIN environment variable not set.")
         # You may want to handle this case based on your requirements
 
     # Use ChromeDriverManager to automatically download and manage ChromeDriver
-    service = Service(ChromeDriverManager().install())
+        service = Service(ChromeDriverManager().install())
 
     # Initialize Chrome driver with options
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+        driver = webdriver.Chrome(service=service, options=chrome_options)
 
-    driver.maximize_window()
+        driver.maximize_window()
 
-    return driver, chrome_options
-    
+        return driver, chrome_options
+    except Exception as e:
+        print(f"Error in open_website function: {e}")
+        return None 
 
 
 
@@ -77,27 +80,8 @@ def text(driver):
     print(f"a:{scraped_text}")
     return scraped_text
 
-import os
 
-def is_chrome_installed():
-    try:
-        # Attempt to get the Chrome executable path from the environment variable
-        chrome_path = os.environ.get("GOOGLE_CHROME_BIN", "")
-        
-        # Check if the file exists
-        if os.path.isfile(chrome_path):
-            return True
-        else:
-            return False
-    except Exception as e:
-        print(f"Error checking Chrome installation: {e}")
-        return False
 
-# Use the function in your code
-if is_chrome_installed():
-    print("Chrome is installed!")
-else:
-    print("Chrome is not installed.")
 
    
 def gpt(query):
