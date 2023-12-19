@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
-from jobspark.settings import CHROME_DRIVER_PATH
+
 from webdriver_manager.chrome import ChromeDriverManager
 import os
 import pathlib
@@ -92,3 +92,4 @@ def main(query2):
     search_jobs(driver, query2)
     return job_data_list2
     driver.quit()
+   

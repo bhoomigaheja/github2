@@ -2,7 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-from jobspark.settings import CHROME_DRIVER_PATH
+
 from webdriver_manager.chrome import ChromeDriverManager
 import os
 import pathlib
@@ -16,7 +16,7 @@ def open_website(url):
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
         chrome_options.add_argument(f"user-agent={user_agent}")
         chrome_options.add_argument(f"user-data-dir={ScriptDir}\\chromedata")
-        chrome_options.add_argument('--headless')
+        #chrome_options.add_argument('--headless')
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
         driver.maximize_window()
@@ -109,3 +109,4 @@ def scrape_jobs(query):
     driver.quit()
 
 # Example usage
+scrape_jobs('java')
