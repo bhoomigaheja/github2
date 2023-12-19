@@ -279,20 +279,24 @@ def login_user(request):
 from django.shortcuts import render
 from jobspark.scrapping3 import gpt
 
-from django.shortcuts import render
+from django.shortcuts import rend
 
-# views.py
+
 from django.shortcuts import render
-from .scrapping3 import gpt
+from django.http import HttpResponse
+from .scrapping3 import gpt, is_chrome_installed
 
 def gpt_view(request):
+    if not is_chrome_installed():
+        return HttpResponse("Chrome is not installed. Please install Chrome to use this feature.")
+
     if request.method == 'POST':
-        query = request.POST.get('query4')
-        scraped_data = gpt(query)
-        return render(request, 'gpt.html', {'scraped_data': scraped_data})
+        query = request.POST.get('query4', '')
+        if query:
+            scraped_data = gpt(query)
+            return render(request, 'gpt.html', {'scraped_data': scraped_data})
 
-    return render(request, 'index.html') 
-
+    return render(request, 'index.html')
 
      # Render the form page for GET requests
 

@@ -141,3 +141,5 @@ import dj_database_url
 DATABASE_URL = "postgres://bhoomi_user:1LWR2B0NWTLiuN6sgdwclNqb8EUx7uJR@dpg-clvflo6g1b2c73cg4gm0-a/bhoomi"
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
+
+
