@@ -1,5 +1,7 @@
-[10980:5760:1217/185211.937:WARNING:chrome_main_delegate.cc(667)] This is Chrome version 120.0.6099.72 (not a warning)
-[10980:5760:1217/185212.141:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(168) Starting CBCM Controller Initialization
-[10980:5760:1217/185212.141:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(196) No machine level policy manager exists.
-[10980:5760:1217/185220.493:INFO:CONSOLE(0)] "The resource https://flowgpt.com/_next/static/-LM5L1e6Y8fD6HoKe1sBq/_ssgManifest.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source: https://flowgpt.com/chat (0)
-[10980:5760:1217/185256.155:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[7844:5888:1219/175122.927:WARNING:chrome_main_delegate.cc(667)] This is Chrome version 120.0.6099.110 (not a warning)
+[7844:5888:1219/175123.154:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(168) Starting CBCM Controller Initialization
+[7844:5888:1219/175123.154:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(196) No machine level policy manager exists.
+[7844:4536:1219/175128.125:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[7844:5644:1219/175133.161:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[7844:2920:1219/175138.138:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[7844:5644:1219/175203.175:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0

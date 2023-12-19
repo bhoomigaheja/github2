@@ -23,14 +23,9 @@ def open_website():
         user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
         chrome_options.add_argument(f"user-agent={user_agent}")
         chrome_options.add_argument(f"user-data-dir={ScriptDir}\\chromedata")
-    
+        
     # Check if the environment variable is set
-        google_chrome_bin = os.environ["GOOGLE_CHROME_BIN"] = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-       
-        if google_chrome_bin:
-           chrome_options.binary_location = google_chrome_bin
-        else:
-            print("GOOGLE_CHROME_BIN environment variable not set.")
+        
         # You may want to handle this case based on your requirements
 
     # Use ChromeDriverManager to automatically download and manage ChromeDriver
@@ -110,3 +105,4 @@ def gpt(query):
 
     return scraped_data
 
+gpt('java')
