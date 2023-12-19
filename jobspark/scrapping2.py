@@ -11,19 +11,22 @@ import pathlib
 from selenium.webdriver.chrome.service import Service
 
 def initialize_driver(url):
-    ScriptDir = pathlib.Path().absolute()
-
-    chrome_options = Options()
-    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
-    chrome_options.add_argument(f"user-agent={user_agent}")
-    chrome_options.add_argument(f"user-data-dir={ScriptDir}\\chromedata")
-    chrome_options.add_argument('--headless')
-
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=chrome_options)
-    driver.maximize_window()
-    driver.get(url)
-    return driver
+    try:
+        ScriptDir = pathlib.Path().absolute()
+        chrome_options = Options()
+        user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+        chrome_options.add_argument(f"user-agent={user_agent}")
+        chrome_options.add_argument(f"user-data-dir={ScriptDir}\\chromedata")
+        chrome_options.add_argument('--headless')
+        service = Service(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=chrome_options)
+        driver.maximize_window()
+        driver.get(url)
+        return driver
+    except Exception as e:
+        print(f"Error in open_website function: {e}")
+        return None
+    
 job_data_list2 = []
 def search_jobs(driver, query2):
     wait = WebDriverWait(driver, 10)
