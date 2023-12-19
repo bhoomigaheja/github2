@@ -3,8 +3,8 @@
 # Build command
 buildCommand:
   - pip install -r requirements.txt
-  - chmod +x download_chrome.sh
-  - ./download_chrome.sh
+  - chmod +x install_chrome.sh
+  - ./install_chrome.sh
 
 # Start command
 startCommand: gunicorn jobspark.wsgi
