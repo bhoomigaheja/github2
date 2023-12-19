@@ -39,11 +39,11 @@ def scrape_jobs(query):
         print('Exception occurred:')
 
     # Enter the search query
-    input_search = driver.find_element(By.XPATH, '//*[@id="txtKeywords"]')
+    input_search = driver.find_element(By.XPATH, '/html/body/div[3]/div[3]/div/div[1]/form/div[1]/input')
     input_search.send_keys(query)
 
     # Click the search button
-    button = driver.find_element(By.XPATH, '//*[@id="quickSearchBean"]/button').click()
+    button = driver.find_element(By.XPATH, '/html/body/div[3]/div[3]/div/div[1]/form/button').click()
 
     try:
         # Close any popup that might appear
@@ -109,4 +109,3 @@ def scrape_jobs(query):
     driver.quit()
 
 # Example usage
-scrape_jobs('java')
