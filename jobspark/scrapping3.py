@@ -105,4 +105,3 @@ def gpt(query):
 
     return scraped_data
 
-gpt('java')

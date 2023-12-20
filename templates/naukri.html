@@ -680,80 +680,330 @@
           </div>
         </div>
         <div>
-  <!-- jobs.html -->
-  <div class="margin-25px">
-    <div class="w-dyn-list">
-        <div role="list" class="job-grid w-dyn-items">
-          {% for job in job_data_list2 %}
-          
-                <div role="listitem" class="w-dyn-item">
-                    <a href="{{ job.url }}" class="job-wrapper w-inline-block">
-                        <img src="{{ job.company_logo }}" loading="lazy" alt="" class="company-logo" />
-                        <div class="company-name">{{ job.company }}</div>
-                        <div class="margin-20px">
-                            <h3 class="job-name">{{ job.JobTitle}}</h3>
-                        </div>
-                        <div class="job-type"></div>
+          {% if query2 %}
+          <div class="margin-25px">
+            <div class="w-dyn-list">
+              <div role="list" class="job-grid w-dyn-items">
+                <div role="listitem" class="w-dyn-item"><a href="/job-post/customer-support-agent"
+                    class="job-wrapper w-inline-block">
+                    <div class="company-name">Spiro Prime Tech Services</div>
+                    <div class="margin-20px">
+                      <h3 class="job-name">{{query}}</h3>
+                    </div>
+                    <div class="job-type">Part Time</div>
+                    <div class="job-type featured w-condition-invisible">Featured</div>
+                    <div class="margin-25px">
+                      <div class="flex-category in-job">
+                        <p class="categories-text">Rs50,000 - Rs300,000</p>
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Remote</p>
+                     
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Part Time</p>
+                      </div>
+                    </div>
+                    <div class="margin-20px">
+                      <div class="button second">Apply For Job</div>
+                    </div>
+                  </a></div>
+                <div role="listitem" class="w-dyn-item"><a href="/job-post/general-ledger-accountant"
+                    class="job-wrapper w-inline-block">
+                    <div class="company-name">Accubits Technologies</div>
+                    <div class="margin-20px">
+                      <h3 class="job-name">{{query}}</h3>
+                    </div>
+                    <div class="job-type">Part Time</div>
+                    <div class="job-type featured">Featured</div>
+                    <div class="margin-25px">
+                      <div class="flex-category in-job">
+                        <p class="categories-text">Rs30,000 - Rs100,000</p>
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Remote</p>
+                        
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Part Time</p>
+                      </div>
+                    </div>
+                    <div class="margin-20px">
+                      <div class="button second">Apply For Job</div>
+                    </div>
+                  </a></div>
+                <div role="listitem" class="w-dyn-item"><a href="/job-post/senior-product-designer"
+                    class="job-wrapper w-inline-block">
+                    <div class="company-name">Meon Technologies</div>
+                    <div class="margin-20px">
+                      <h3 class="job-name">{{query}}</h3>
+                    </div>
+                    <div class="job-type">Part Time</div>
+                    <div class="job-type featured">Featured</div>
+                    <div class="margin-25px">
+                      <div class="flex-category in-job">
+                        <p class="categories-text">Rs40,000 - Rs100,000</p>
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Banglore</p>
+                        <p class="categories-text slash">/</p>
+                        
+                        <p class="categories-text">Part Time</p>
+                      </div>
+                    </div>
+                    <div class="margin-20px">
+                      <div class="button second">Apply For Job</div>
+                    </div>
+                  </a></div>
+                <div role="listitem" class="w-dyn-item"><a href="/job-post/product-manager"
+                    class="job-wrapper w-inline-block">
+                    <div class="company-name">Intelgic Technologies</div>
+                    <div class="margin-20px">
+                      <h3 class="job-name">{{query}}</h3>
+                    </div>
+                    <div class="job-type">Full Time</div>
+                    <div class="job-type featured w-condition-invisible">Featured</div>
+                    <div class="margin-25px">
+                      <div class="flex-category in-job">
+                        <p class="categories-text"> Rs20,000 - Rs200,000</p>
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Jaipur</p>
                        
-                            <div class="job-type featured">{{ job.company}}</div>
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Full Time</p>
+                      </div>
+                    </div>
+                    <div class="margin-20px">
+                      <div class="button second">Apply For Job</div>
+                    </div>
+                  </a></div>
+                <div role="listitem" class="w-dyn-item"><a href="/job-post/software-engineer"
+                    class="job-wrapper w-inline-block">
+                    <div class="company-name">Citius Tech</div>
+                    <div class="margin-20px">
+                      <h3 class="job-name">{{query}}</h3>
+                    </div>
+                    <div class="job-type">Full Time</div>
+                    <div class="job-type featured w-condition-invisible">Featured</div>
+                    <div class="margin-25px">
+                      <div class="flex-category in-job">
+                        <p class="categories-text">Rs40,000 - Rs200,000</p>
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Remote</p>
                        
-                        <div class="margin-25px">
-                            <div class="flex-category in-job">
-                                <p class="categories-text">{{ job.SalaryRange }}</p>
-                                <p class="categories-text slash">/</p>
-                                <p class="categories-text">{{ job.City }}</p>
-                                <p class="categories-text slash">/</p>
-                                <p class="categories-text">{{ job.DatePosted }}</p>
-                                <p class="categories-text slash">/</p>
-                                <p class="categories-text">{{job.ExperienceReqd}}</p>
-                                <p class="categories-text">{{job.Description}}</p>
-                                
-                            </div>
-                        </div>
-                        <div class="margin-20px">
-                            <div class="button second">Apply For Job</div>
-                        </div>
-                    </a>
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Full Time</p>
+                      </div>
+                    </div>
+                    <div class="margin-20px">
+                      <div class="button second">Apply For Job</div>
+                    </div>
+                  </a></div>
+                <div role="listitem" class="w-dyn-item"><a href="/job-post/recruiting-coordinator"
+                    class="job-wrapper w-inline-block">
+                    <div class="company-name">Coders Brain</div>
+                    <div class="margin-20px">
+                      <h3 class="job-name">{{query}}</h3>
+                    </div>
+                    <div class="job-type">Part Time</div>
+                    <div class="job-type featured">Featured</div>
+                    <div class="margin-25px">
+                      <div class="flex-category in-job">
+                        <p class="categories-text">Rs20,000 - Rs100,000</p>
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Remote</p>
+                     
+                        <p class="categories-text slash">/</p>
+                        <p class="categories-text">Part Time</p>
+                      </div>
+                    </div>
+                    <div class="margin-20px">
+                      <div class="button second">Apply For Job</div>
+                    </div>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="margin-25px">
+          <div class="w-dyn-list">
+            <div role="list" class="job-grid w-dyn-items">
+              <div role="listitem" class="w-dyn-item"><a href="/job-post/customer-support-agent"
+                  class="job-wrapper w-inline-block">
+                  <div class="company-name">Leading IT Co.</div>
+                  <div class="margin-20px">
+                    <h3 class="job-name">{{query}}t</h3>
+                  </div>
+                  <div class="job-type">Part Time</div>
+                  <div class="job-type featured w-condition-invisible">Featured</div>
+                  <div class="margin-25px">
+                    <div class="flex-category in-job">
+                      <p class="categories-text">Rs30,000 - Rs100,000</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Remote</p>
+                     
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Part Time</p>
+                    </div>
+                  </div>
+                  <div class="margin-20px">
+                    <div class="button second">Apply For Job</div>
+                  </div>
+                </a></div>
+              <div role="listitem" class="w-dyn-item"><a href="/job-post/general-ledger-accountant"
+                  class="job-wrapper w-inline-block">
+                  <div class="company-name">vistusa</div>
+                  <div class="margin-20px">
+                    <h3 class="job-name">{{query}}</h3>
+                  </div>
+                  <div class="job-type">Part Time</div>
+                  <div class="job-type featured">Featured</div>
+                  <div class="margin-25px">
+                    <div class="flex-category in-job">
+                      <p class="categories-text">Rs40,000 - Rs200,000</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Mumbai</p>
+                  
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Part Time</p>
+                    </div>
+                  </div>
+                  <div class="margin-20px">
+                    <div class="button second">Apply For Job</div>
+                  </div>
+                </a></div>
+              <div role="listitem" class="w-dyn-item"><a href="/job-post/senior-product-designer"
+                  class="job-wrapper w-inline-block">
+                  <div class="company-name">galtech</div>
+                  <div class="margin-20px">
+                    <h3 class="job-name">{{query}}</h3>
+                  </div>
+                  <div class="job-type">Part Time</div>
+                  <div class="job-type featured">Featured</div>
+                  <div class="margin-25px">
+                    <div class="flex-category in-job">
+                      <p class="categories-text"> Rs60,000 - Rs200,00</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Pune</p>
+                      
+                      
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Part Time</p>
+                    </div>
+                  </div>
+                  <div class="margin-20px">
+                    <div class="button second">Apply For Job</div>
+                  </div>
+                </a></div>
+              <div role="listitem" class="w-dyn-item"><a href="/job-post/product-manager"
+                  class="job-wrapper w-inline-block">
+                  <div class="company-name">Truminds</div>
+                  <div class="margin-20px">
+                    <h3 class="job-name">{{query}}</h3>
+                  </div>
+                  <div class="job-type">Full Time</div>
+                  <div class="job-type featured w-condition-invisible">Featured</div>
+                  <div class="margin-25px">
+                    <div class="flex-category in-job">
+                      <p class="categories-text">Rs50,000 - Rs200,000</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Bangalore</p>
+                      
+                     
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Full Time</p>
+                    </div>
+                  </div>
+                  <div class="margin-20px">
+                    <div class="button second">Apply For Job</div>
+                  </div>
+                </a></div>
+              <div role="listitem" class="w-dyn-item"><a href="/job-post/software-engineer"
+                  class="job-wrapper w-inline-block">
+                  <div class="company-name">NKZ Technologies</div>
+                  <div class="margin-20px">
+                    <h3 class="job-name">{{query}}</h3>
+                  </div>
+                  <div class="job-type">Full Time</div>
+                  <div class="job-type featured w-condition-invisible">Featured</div>
+                  <div class="margin-25px">
+                    <div class="flex-category in-job">
+                      <p class="categories-text">Rs4,000 - Rs20,000</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Remote</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Development</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Full Time</p>
+                    </div>
+                  </div>
+                  <div class="margin-20px">
+                    <div class="button second">Apply For Job</div>
+                  </div>
+                </a></div>
+              <div role="listitem" class="w-dyn-item"><a href="/job-post/recruiting-coordinator"
+                  class="job-wrapper w-inline-block">
+                  <div class="company-name">Vinove Software</div>
+                  <div class="margin-20px">
+                    <h3 class="job-name">{{query}}</h3>
+                  </div>
+                  <div class="job-type">Part Time</div>
+                  <div class="job-type featured">Featured</div>
+                  <div class="margin-25px">
+                    <div class="flex-category in-job">
+                      <p class="categories-text">Rs40,000 - Rs200,000</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Remote</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Customer Services</p>
+                      <p class="categories-text slash">/</p>
+                      <p class="categories-text">Part Time</p>
+                    </div>
+                  </div>
+                  <div class="margin-20px">
+                    <div class="button second">Apply For Job</div>
+                  </div>
+                </a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif%}
+      <style>
+        .location-block {
+            background-color: white;
+            /* Add other styles as needed */
+        }</style>
+      <div class="margin-50px">
+        <div class="align-center">
+            <p class="subhead">Select by Category</p>
+        </div>
+        <div class="margin-30px">
+            <div class="w-dyn-list">
+                <div role="list" class="location-grid w-dyn-items">
+                    <div role="listitem" class="w-dyn-item"><a
+                            style="background-image:url('https://webautomation.io/static/images/domain_images/naukricom_0I9Sxr3.png')"
+                            href="{% url 'naukri_view'%}" class="location-block w-inline-block">
+                            <h3 class="job-name white">Naukri</h3>
+                            <div class="blog-overlay"></div>
+                        </a></div>
+                    <div role="listitem" class="w-dyn-item"><a
+                            style="background-image:url('https://static.mediawire.in/pr/metadata/13752271/temp/TJ%20square.png')"
+                            href="{% url 'times_view'%}" class="location-block w-inline-block">
+                            <h3 class="job-name white">Timesjob</h3>
+                            <div class="blog-overlay"></div>
+                        </a></div>
+                    <div role="listitem" class="w-dyn-item"><a
+                            style="background-image:url(&quot;https://assets-global.website-files.com/61139ac7385e7459f5a2c733/6113eff54a0219a30c964948_london.jpg&quot;)"
+                            href="{% url 'gpt2'%}" class="location-block w-inline-block">
+                            <h3 class="job-name white">Interview </h3>
+                            <div class="blog-overlay"></div>
+                        </a></div>
+                    <div role="listitem" class="w-dyn-item"><a
+                            style="background-image:url(&quot;https://assets-global.website-files.com/61139ac7385e7459f5a2c733/6113efff48b4aa1a2a3c70b6_remote.jpg&quot;)"
+                            href="{% url 'application_view' %}" class="location-block w-inline-block">
+                            <h3 class="job-name white">Application</h3>
+                            <div class="blog-overlay"></div>
+                        </a></div>
                 </div>
-            {% endfor %}
+            </div>
         </div>
     </div>
-</div>
-
-            <div class="margin-30px">
-              <div class="w-dyn-list">
-                  <div role="list" class="location-grid w-dyn-items">
-                      <div role="listitem" class="w-dyn-item">
-                          <a style="background-image:url('https://webautomation.io/static/images/domain_images/naukricom_0I9Sxr3.png')"
-                              href="{% url 'naukri_view'%}" class="location-block w-inline-block">
-                              <h3 class="job-name white">Naukri.com</h3>
-                              <div class="blog-overlay"></div>
-                          </a>
-                      </div>
-                      <div role="listitem" class="w-dyn-item">
-                          <a style="background-image:url('https://static.mediawire.in/pr/metadata/13752271/temp/TJ%20square.png')"
-                              href= "{% url 'times_view'%}" class="location-block w-inline-block">
-                              <h3 class="job-name white">Timesjob </h3>
-                              <div class="blog-overlay"></div>
-                          </a>
-                      </div>
-                      <div role="listitem" class="w-dyn-item">
-                          <a style="background-image:url('https://assets-global.website-files.com/61139ac7385e7459f5a2c733/6113eff54a0219a30c964948_london.jpg')"
-                              href="{% url 'show_resume_form'%}" class="location-block w-inline-block">
-                              <h3 class="job-name white">Resume</h3>
-                              <div class="blog-overlay"></div>
-                          </a>
-                      </div>
-                      <div role="listitem" class="w-dyn-item">
-                          <a style="background-image:url('https://assets-global.website-files.com/61139ac7385e7459f5a2c733/6113efff48b4aa1a2a3c70b6_remote.jpg')"
-                              href="{% url 'application_view' %}"" class="location-block w-inline-block">
-                              <h3 class="job-name white">Application</h3>
-                              <div class="blog-overlay"></div>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-          </div>
           
 
     

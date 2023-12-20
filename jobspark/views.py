@@ -47,43 +47,16 @@ def contact(request):
 
 
 
-from django.shortcuts import render
-from django.http import HttpResponseBadRequest
+
  # Replace 'Job' with the actual model you are searching
 
+from django.shortcuts import render
+
 def jobs_search(request):
-    if request.method == 'POST':
-        # Check if the user is logged in
-        if request.user.is_authenticated:
-            # Get the user's email
-            user_email = request.user.email
+    query = request.POST.get('query', '')
 
-            # Get the current count from the session or set it to 0
-            search_count = request.session.get(f'search_count_{user_email}', 0)
+    return render(request, 'jobs.html', {'query': query})
 
-            # Check if the user has exceeded the search limit
-            if search_count >= 4:
-                return HttpResponseBadRequest("Search limit exceeded.")
-
-            # Increment the search count
-            request.session[f'search_count_{user_email}'] = search_count + 1
-
-        query = request.POST['query']
-        data_dict_list = scrape_jobs(query)
-        data_dict_list = data_dict_list[:24]
-
-        # Print the data before rendering
-        for job_data in data_dict_list:
-            print(job_data)
-
-        # Check if data_dict_list is not None before rendering
-        if data_dict_list:
-            return render(request, 'jobs.html', {'job_data_list': data_dict_list})
-        else:
-            # Handle the case where scrape_jobs returns an empty list
-            return render(request, 'jobs.html', {'error_message': 'No data found'})
-    else:
-        return render(request, 'index.html')
 
 # views.py
 
@@ -119,17 +92,9 @@ def login_view(request):
   # Replace with the actual module name where your scraping function is defined
 
 def naukri_view2(request):
-    if request.method == 'POST':
-        query2 = request.POST.get('query2', '')
-        job_data_list2 = main(query2)
-        job_data_list2 = job_data_list2[:18]
+    query = request.POST.get('query2', '')
 
-        if job_data_list2:
-            return render(request, 'naukri.html', {'query2': query2, 'job_data_list2': job_data_list2})
-        else:
-            return render(request, 'index.html', {'error_message': 'No data found'})
-
-    return render(request, 'index.html')
+    return render(request, 'jobs2.html', {'query2': query})
 
 
 def naukri_view(request):

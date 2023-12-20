@@ -24,10 +24,10 @@ import os
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
-
+#SECRET_KEY ='123456789098ytrsdfghjkhfqwertyu-09876r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG","FALSE").lower()== "true"
-
+DEBUG = "TRUE"
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,https://jobspark-23.onrender.com").split(",")
 
 
@@ -92,6 +92,22 @@ DATABASES = {
     }
 }
 
+# jobspark/settings.py
+
+# jobspark/settings.py
+
+'''DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bhoomi',     # Change this to your PostgreSQL database name
+        'USER': 'postgres',   # Correct PostgreSQL username
+        'PASSWORD': '1234',    # Change this to the correct PostgreSQL password
+        'HOST': 'localhost',  # Set this to the PostgreSQL server's address (e.g., 'localhost')
+        'PORT': '5432',       # Change this to your PostgreSQL port
+    }
+}
+
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -138,8 +154,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CHROME_DRIVER_PATH = 'chrome.exe'
 os.environ["GOOGLE_CHROME_BIN"] = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 import dj_database_url
-DATABASE_URL = "postgres://bhoomi_user:1LWR2B0NWTLiuN6sgdwclNqb8EUx7uJR@dpg-clvflo6g1b2c73cg4gm0-a/bhoomi"
-DATABASE_URL = os.environ.get("DATABASE_URL")
+#DATABASE_URL = "postgres://bhoomi_user:1LWR2B0NWTLiuN6sgdwclNqb8EUx7uJR@dpg-clvflo6g1b2c73cg4gm0-a/bhoomi"
+#DATABASE_URL = os.environ.get("DATABASE_URL")
 
 
 
