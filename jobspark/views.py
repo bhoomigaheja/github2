@@ -260,3 +260,5 @@ def gpt_view(request):
 
 def gpt2(request):
     return render(request, 'gpt.html')
+  
+
