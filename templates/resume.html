@@ -321,7 +321,7 @@
 function downloadPDF() {
     var element = document.getElementById('resume-container');
 
-    html2pdf(element);
+    html2pdf().from(element).outputPdf();
 }
 
 </script>
