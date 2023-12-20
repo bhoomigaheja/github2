@@ -153,26 +153,21 @@ from django.shortcuts import redirect
 
 from django.shortcuts import render, redirect
 
+# job_application/views.py
+
+from django.shortcuts import render
+from .models import JobApplication
+
 def search_jobs(request):
-    try:
-        if request.method == 'POST':
-            query = request.POST.get('query3', '')
-            with connection.cursor() as cursor:
-                sql_query = "SELECT * FROM application WHERE job_title LIKE %s"
-                cursor.execute(sql_query, ['%' + query + '%'])
-                results = cursor.fetchall()
+    if request.method == 'POST':
+        query = request.POST.get('query3', '')
+        results = JobApplication.objects.filter(job_title__icontains=query)
+        return render(request, 'appliation.html', {'results': results, 'query3': query})
+    else:
+        # Handle GET request or redirect as needed
+        return render(request, 'index.html')  # You might want to add more logic here
 
-                # Print the SQL query for debugging
-                print(f"SQL Query: {cursor.mogrify(sql_query, ['%' + query + '%'])}")
-                
 
-            return render(request, 'application.html', {'results': results})
-
-        return render(request, 'index.html')
-
-    except DatabaseError as e:
-        print(f"Database Error: {e}")
-        return render(request, 'index.html')
 
   # You can modify this based on your error handling strategy
 
