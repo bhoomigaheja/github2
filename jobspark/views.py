@@ -93,8 +93,8 @@ def login_view(request):
 
 def naukri_view2(request):
     query = request.POST.get('query2', '')
-
-    return render(request, 'jobs2.html', {'query2': query})
+    modified_query = query.replace(' ', '-')
+    return render(request, 'jobs2.html', {'query2': query, 'modified_query': modified_query})
 
 
 def naukri_view(request):
