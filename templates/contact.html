@@ -610,36 +610,9 @@
           <div class="margin-20px">
             <p class="subhead">Have questions? We’re ready to help!<br /></p>
           </div>
-          
-    <div class="section">
-      <div class="container">
-        <div>
-          <div class="max-w-width">
-            <div class="top-text second">Contact Us</div>
-            <h3 class="title-2">Get in touch with our support team</h3>
-          </div>
-          <div>
-            <div class="form-block w-form">
-              <!-- contact_form.html -->
-{% if submitted %}
-<div>Thank you! Your submission has been received!</div>
-{% else %}
-<form method="post" action="{% url 'submit_form' %}" class="form" data-wf-page-id="61139ac7385e740a4ca2c70e" data-wf-element-id="e09853b7-0a94-2f6e-ff20-dd7bea8e8065">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div class="margin-10px">
-        <input type="submit" value="Contact Us" class="button full w-button" />
-    </div>
-</form>
-{% endif %}
-              <div class="error-message w-form-fail">
-                <div>Oops! Something went wrong while submitting the form.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          <div class="margin-25px">
+            <div class="breadcrumb-flex">
+              
     <div class="section cta">
       <div class="container">
         <div class="max-w-width _0px-margin">
