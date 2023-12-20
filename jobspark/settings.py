@@ -154,8 +154,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CHROME_DRIVER_PATH = 'chrome.exe'
 os.environ["GOOGLE_CHROME_BIN"] = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 import dj_database_url
-#DATABASE_URL = "postgres://bhoomi_user:1LWR2B0NWTLiuN6sgdwclNqb8EUx7uJR@dpg-clvflo6g1b2c73cg4gm0-a/bhoomi"
-#DATABASE_URL = os.environ.get("DATABASE_URL")
+DATABASE_URL = "postgres://bhoomi_user:1LWR2B0NWTLiuN6sgdwclNqb8EUx7uJR@dpg-clvflo6g1b2c73cg4gm0-a/bhoomi"
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 
 

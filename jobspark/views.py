@@ -162,7 +162,7 @@ def search_jobs(request):
     if request.method == 'POST':
         query = request.POST.get('query3', '')
         results = JobApplication.objects.filter(job_title__icontains=query)
-        return render(request, 'appliation.html', {'results': results, 'query3': query})
+        return render(request, 'application.html', {'results': results, 'query3': query})
     else:
         # Handle GET request or redirect as needed
         return render(request, 'index.html')  # You might want to add more logic here
